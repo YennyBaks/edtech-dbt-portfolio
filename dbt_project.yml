@@ -1,0 +1,39 @@
+# Edtech Analytics (PORTFOLIO PROJECT, SYNTHETIC DATA)
+name: edtech_analytics
+version: "1.0.0"
+config-version: 2
+profile: edtech_analytics
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+seeds:
+  edtech_analytics:
+    +schema: raw
+    raw_sis_registrations:
+      +column_types:
+        sis_student_id: integer
+        email: varchar
+        registration_date: date
+    raw_payments:
+      +column_types:
+        sis_student_id: integer
+        payment_date: date
+        amount_usd: decimal(10,2)
+
+models:
+  edtech_analytics:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts

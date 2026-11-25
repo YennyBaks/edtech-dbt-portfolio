@@ -1,0 +1,12 @@
+version: 2
+seeds:
+  - name: raw_universities
+    description: "University clients (fictional). SYNTHETIC DATA."
+  - name: raw_sis_registrations
+    description: "Student information system export: one row per student registration per term, with real-world messiness (duplicate rows, inconsistent email case and spacing, program spelling variants). SYNTHETIC DATA."
+  - name: raw_lms_users
+    description: "LMS accounts: own IDs, some personal or alias emails, some students missing, plus test accounts. SYNTHETIC DATA."
+  - name: raw_lms_weekly_activity
+    description: "LMS activity, one row per LMS user per active week. SYNTHETIC DATA."
+  - name: raw_payments
+    description: "Tuition payments: full, partial, failed, refunds (negative) and a few orphan student IDs. SYNTHETIC DATA."

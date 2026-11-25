@@ -1,0 +1,8 @@
+# Local DuckDB connection: no server, no password. The database is one file in this folder.
+edtech_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: edtech.duckdb
+      threads: 4
